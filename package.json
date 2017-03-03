@@ -1,32 +1,52 @@
 {
   "name": "ng2-starter",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/claudiu909/ng2-starter.git"
+  },
+  "author": "claudiv.uk",
   "scripts": {
+    "build": "npm run clean:dist && webpack --progress",
+    "build:prod": "npm run clean:dist && cross-env APP_ENV=production webpack -p --progress",
+    "build:watch": "npm run build -- --watch",
+    "clean:dist": "npm run rimraf -- dist",
     "postinstall": "typings install",
-    "build": "webpack --progress",
-    "build:prod": "webpack -p --progress",
-    "start": "webpack-dev-server --inline --progress"
+    "rimraf": "rimraf",
+    "start": "webpack-dev-server --inline --progress",
+    "test": "karma start --single-run",
+    "test:watch": "karma start"
   },
   "dependencies": {
-    "@angular/common": "2.0.1",
-    "@angular/compiler": "2.0.1",
-    "@angular/core": "2.0.1",
-    "@angular/forms": "2.0.1",
-    "@angular/http": "2.0.1",
-    "@angular/platform-browser": "2.0.1",
-    "@angular/platform-browser-dynamic": "2.0.1",
-    "@angular/router": "3.0.1",
-    "core-js": "2.4.1",
-    "reflect-metadata": "0.1.8",
-    "rxjs": "5.0.0-beta.12",
-    "zone.js": "0.6.25"
+    "@angular/common": "2.4.6",
+    "@angular/compiler": "2.4.6",
+    "@angular/core": "2.4.6",
+    "@angular/forms": "2.4.6",
+    "@angular/http": "2.4.6",
+    "@angular/platform-browser": "2.4.6",
+    "@angular/platform-browser-dynamic": "2.4.6",
+    "@angular/router": "3.4.6",
+    "core-js": "^2.4.1",
+    "reflect-metadata": "^0.1.9",
+    "rxjs": "5.1.0",
+    "zone.js": "0.7.6"
   },
   "devDependencies": {
-    "html-webpack-plugin": "^2.22.0",
-    "ts-loader": "^0.8.2",
-    "typescript": "^2.0.3",
-    "typings": "^1.4.0",
-    "webpack": "^1.13.2",
+    "angular2-template-loader": "^0.6.1",
+    "cross-env": "^3.1.4",
+    "jasmine-core": "^2.5.2",
+    "karma": "^1.4.1",
+    "karma-jasmine": "^1.1.0",
+    "karma-phantomjs-launcher": "^1.0.2",
+    "karma-webpack": "^2.0.2",
+    "node-sass": "^4.5.0",
+    "raw-loader": "^0.5.1",
+    "rimraf": "^2.5.4",
+    "sass-loader": "^5.0.0",
+    "ts-loader": "2.0.0",
+    "typescript": "2.1.5",
+    "typings": "2.1.0",
+    "webpack": "2.2.1",
     "webpack-dev-server": "^1.16.1"
   }
 }
